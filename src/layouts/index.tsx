@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
 
-import Header from './Header';
-
-import Footer from './Footer';
-import Main from './Main';
+import Header from './header';
+import Footer from './footer';
+import Main from './main';
 
 const Layout: React.FC = () => {
   return (

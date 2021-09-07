@@ -1,0 +1,11 @@
+.empty-record {
+  text-align: center;
+  margin: 8px 0px auto;
+  &__title {
+    font-size: 1.6rem;
+  }
+  &__desc {
+    font-size: 1rem;
+    color: gray;
+  }
+}

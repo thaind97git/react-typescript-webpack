@@ -1,0 +1,71 @@
+const fs = require('fs')
+const path = require('path')
+const { spawn } = require('child_process')
+
+function removeDir(_path) {
+  if (!fs.existsSync(_path)) {
+    return console.log('Directory path not found.')
+  }
+
+  const files = fs.readdirSync(_path)
+
+  if (files.length > 0) {
+    files.forEach(function(filename) {
+      if (fs.statSync(_path + '/' + filename).isDirectory()) {
+        removeDir(_path + '/' + filename)
+      } else {
+        fs.unlinkSync(_path + '/' + filename)
+      }
+    })
+  }
+
+  fs.rmdirSync(_path)
+}
+
+const huskyDir = path.join(__dirname, '.husky')
+removeDir(huskyDir)
+
+
+/**
+ * To fix windows error
+ */
+const appAlias = app => /^win/.test(process.platform) ? `${app}.cmd` : app
+
+const scripts = [
+  [ appAlias('npx'), [ 'husky', 'install' ] ],
+  [ appAlias('npx'), [ 'husky', 'add', '.husky/pre-commit', 'npx lint-staged' ] ],
+  // [ appAlias('npx'), [ 'husky', 'add', '.husky/pre-push', 'npm run test' ] ],
+]
+
+const runCMD = (cmd, options) => new Promise((resolve, reject) => {
+  const output = [ `Execute: ${cmd} ${options.join(' ')}` ]
+  const execCMD = spawn(cmd, options)
+
+  execCMD.stdout.on('data', data => output.push(data))
+  execCMD.stderr.on('data', data => output.push(data))
+
+  execCMD.on('error', error => {
+    return reject(error)
+  })
+
+  execCMD.on('close', code => {
+    if (code) {
+      return reject(new Error(output.join('\n').replace(/[\n]{2,}/gm, '\n')))
+    }
+    return resolve(output.join('\n').replace(/[\n]{2,}/gm, '\n'))
+  })
+})
+
+async function run () {
+  for (const script of scripts) {
+    try {
+      console.log(`====================================================`)
+      const message = await runCMD(...script)
+      console.log(message)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+run()

@@ -1,0 +1,22 @@
+.home-tag {
+  &.label {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+  &.label-item {
+    color: white;
+    padding: 8px 0.5rem;
+    border-radius: 6px;
+    margin-right: 0.4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #333;
+    display: inline-block;
+
+    &.info {
+      background-color: #00aefd;
+    }
+  }
+}

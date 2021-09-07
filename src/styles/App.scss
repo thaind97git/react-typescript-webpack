@@ -1,0 +1,19 @@
+@import './size';
+
+@import './container';
+
+@import './font';
+@import './mixin';
+@import './color';
+@import './utils';
+@import './reset';
+@import './typography.scss';
+
+// load all component style
+@import '../components/**/*.scss';
+
+// load all pages style
+@import '../features/**/*.scss';
+
+// load all layouts style
+@import '../layouts/**/*.scss';

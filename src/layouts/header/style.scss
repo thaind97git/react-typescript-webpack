@@ -1,0 +1,238 @@
+.header {
+  box-shadow: 0 0px 19px 0px #0000001a;
+  padding: 0px 20px;
+  display: flex;
+  .logo-header {
+    display: flex;
+    align-items: center;
+    .box-img-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: max-content;
+      cursor: pointer;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+      }
+      h4 {
+        margin: 5px;
+        font-family: inherit;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: $primary-color;
+        text-align: center;
+      }
+    }
+  }
+  .menu {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      li {
+        padding: 8px 10px;
+        @include mobile {
+          & {
+            display: none;
+            padding: 0 10px;
+          }
+        }
+
+        &.active a {
+          color: $primary-color;
+          border-bottom: 2px solid $primary-color;
+        }
+
+        &.button-github {
+          cursor: pointer;
+          display: block;
+          padding: 0;
+          padding-left: 0;
+        }
+        a {
+          display: block;
+          text-align: center;
+          font-size: 15px;
+          color: black;
+          padding: 5px 15px;
+
+          &:hover {
+            color: $primary-color;
+          }
+
+          @include mobile {
+            & {
+              padding: 3px 15px;
+              font-size: 14px;
+            }
+          }
+
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-menu-mobile {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 34px;
+  position: relative;
+  display: none;
+  margin-left: 20px;
+  @include mobile {
+    & {
+      display: flex;
+    }
+  }
+  span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: $primary-color;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -85%;
+  width: 85%;
+  max-width: 400px;
+  background-color: #ffff;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: 0.2s;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 999;
+
+  &.show {
+    right: 0;
+  }
+
+  .m-menu__title {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.5);
+
+    .m-menu-close {
+      padding: 0;
+      font-size: 26px;
+      width: 32px;
+      height: 32px;
+      text-align: center;
+      line-height: 22px;
+      text-decoration: none;
+      color: $primary-color;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      list-style-type: none;
+
+      &.active > a {
+        color: #00b140;
+      }
+
+      &.has-submenu a {
+        padding-right: 35px;
+        position: relative;
+        .btn-toggle-sub {
+          width: 40px;
+          height: 42px;
+          max-height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: #000;
+          z-index: 2;
+        }
+
+        .btn-toggle-sub:before {
+          content: '+';
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.2s;
+          font-size: 18px;
+        }
+
+        .sub-menu {
+          padding-left: 20px;
+          display: none;
+
+          li {
+            a {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        display: block;
+        padding: 11px 20px;
+        transition: 0.2s;
+        line-height: 1.3;
+
+        &::before {
+          content: '';
+          border-bottom: 1px solid rgba($primary-color, 0.8);
+          display: block;
+          position: absolute;
+          left: 20px;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.overlay-menu.active {
+  &.active {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.5s;
+    z-index: 888;
+  }
+}

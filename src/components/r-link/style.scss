@@ -1,0 +1,13 @@
+.r-link {
+  color: $link-color;
+  & * {
+    color: $link-color;
+  }
+  & .prefix {
+    margin-right: 4px;
+  }
+
+  & .suffix {
+    margin-left: 4px;
+  }
+}

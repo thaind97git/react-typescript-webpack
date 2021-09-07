@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <App/> without crashing 1`] = `
+<BrowserRouter>
+  <Helmet
+    defaultTitle="React Starter"
+    defer={true}
+    encodeSpecialCharacters={true}
+    prioritizeSeoTags={false}
+    titleTemplate="%s - React Starter"
+  >
+    <meta
+      content="A React Starter application"
+      name="description"
+    />
+  </Helmet>
+  <Memo(Connect(ConnectedRouterWithContext))
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <React.Suspense
+      fallback={
+        <PageLoading
+          show={true}
+        />
+      }
+    >
+      <Layout />
+      <PageLoading />
+    </React.Suspense>
+  </Memo(Connect(ConnectedRouterWithContext))>
+  <ToastContainer
+    autoClose={5000}
+    closeButton={[Function]}
+    closeOnClick={true}
+    draggable={true}
+    draggableDirection="x"
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    role="alert"
+    rtl={false}
+    transition={[Function]}
+  />
+</BrowserRouter>
+`;

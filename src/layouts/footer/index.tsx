@@ -4,10 +4,11 @@ import { selectDisplayLayout } from '@/store/slices/layoutSlice';
 import Github from '@/static/images/icon/github.svg';
 import LinkedIn from '@/static/images/icon/linkedin.svg';
 import StackOverflow from '@/static/images/icon/stack-overflow.svg';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const { footer } = useSelector(selectDisplayLayout);
-
   if (!footer) {
     return null;
   }
@@ -36,7 +37,7 @@ const Footer: React.FC = () => {
           <StackOverflow className="img stack-overflow" />
         </a>
       </div>
-      <h3>Copyright (c) 2021 by Aldenn</h3>
+      <h3>{t('footer.copy_right')}</h3>
     </div>
   );
 };

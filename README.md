@@ -70,7 +70,7 @@ For Production:
 - [ ] Redux-saga
 - [x] Jest
 - [x] Axios
-- [x] I18n [Not completed]
+- [x] I18n
 - [x] React-router
 - [x] Alias
 - [x] Hot reload
@@ -138,6 +138,43 @@ For Production:
     _- This is a feature by using [import-glob](https://www.npmjs.com/package/import-glob) (check at `webpack/webpack.common.js` for plugin and `src/styles/App.scss` for using)_
 
     _- You should use [BEM](http://getbem.com/) to write css without conflict_
+
+- Using i18n
+
+  - Create new json file at `src/locales/resources/<file-name/>.json`
+  - Add content follow this format into json file
+    ```javascript
+    {
+      "en": {
+        "name": "Name"
+      },
+      "vi": {
+        "name": "Tên"
+      }
+    }
+    ```
+  - update `src/locales/resources/index.ts` like this:
+
+    ```javascript
+    /*
+     * you can use other name instead `user`
+     * this name will be used as path to key
+    */
+    import user from './<file-name/>.json
+
+    const mergeResource: IResource = {
+      ..., // others json
+      user
+    };
+    ```
+
+  - Now inside any where, you can access to key like this:
+
+    ```javascript
+      const { t } = useTranslation()
+
+      t('user.name') will be render "Name" for `en` and "Tên" for `vi`
+    ```
 
 ---
 

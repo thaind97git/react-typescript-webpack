@@ -1,0 +1,14 @@
+{
+  "en": {
+    "title": "React-Typescript-Webpack was config with React, Typescript and Webpack without CRA. Faster to start your next react project.",
+    "keywords": "Keywords",
+    "created_by": "Created with by",
+    "copy_right": "Copyright (c) 2021 by Aldenn"
+  },
+  "vi": {
+    "title": "React-Typescript-Webpack được xây dựng từ React, Typescript và Webpack mà không sử dụng CRA. Giúp người dùng bắt đầu nhanh một dự án từ React",
+    "keywords": "Các từ khoá",
+    "created_by": "Được thiết kế bởi ",
+    "copy_right": "Bản quyền (c) 2021 bởi Aldenn"
+  }
+}

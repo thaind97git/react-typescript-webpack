@@ -4,9 +4,19 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  .select-language {
+    margin: 12px auto;
+    .lang-item {
+      display: flex;
+      align-items: center;
+    }
+  }
 
   .banner {
     margin-bottom: 20px;
+    @include s-mobile {
+      width: 100%;
+    }
   }
 
   .title {

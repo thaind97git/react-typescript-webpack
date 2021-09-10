@@ -6,7 +6,7 @@ const Login: React.FC = () => {
       <div className="bg" />
       <form>
         <header>
-          <img src="https://assets.codepen.io/3931482/internal/avatars/users/default.png?format=auto&height=80&version=1592223909&width=80" />
+          <img src="/static/images/login-avatar.png" />
         </header>
         <div className="inputs">
           <input type="text" placeholder="username or email" />

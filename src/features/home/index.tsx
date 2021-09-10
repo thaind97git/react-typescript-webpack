@@ -48,6 +48,7 @@ const Home: React.FC = () => {
       <div className="container">
         <img className="banner" src={Banner} />
         <Select
+          defaultValue={i18n.language}
           className="select-language"
           onChange={option => {
             i18n.changeLanguage(option.value);

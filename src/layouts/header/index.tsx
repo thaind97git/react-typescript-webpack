@@ -49,6 +49,7 @@ const Header: React.FC = () => {
                 </a>
               </li>
             ))}
+            <li>Version: {process.env.VERSION}</li>
             <li className="button-github">
               <a
                 style={{ display: 'flex', alignItems: 'center' }}
@@ -56,7 +57,7 @@ const Header: React.FC = () => {
                 rel="noreferrer"
                 href="https://github.com/thaind97git/react-typescript-webpack"
               >
-                GitRepo <span>&nbsp;</span> <Github style={{ height: 24 }} />
+                <span>&nbsp;</span> <Github style={{ height: 24 }} />
               </a>
             </li>
           </ul>

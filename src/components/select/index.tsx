@@ -12,6 +12,7 @@ interface IProps {
   width?: number;
   onChange?: (option: IOption) => void;
   className?: string;
+  defaultValue?: any;
 }
 
 const Select: React.FC<IProps> = ({
@@ -19,9 +20,12 @@ const Select: React.FC<IProps> = ({
   width = 240,
   onChange,
   className,
+  defaultValue,
 }) => {
   const [show, setShow] = useState<boolean>(false);
-  const [option, setOption] = useState<IOption>(options[0]);
+  const [option, setOption] = useState<IOption>(
+    options.find(opt => opt.value === defaultValue) || options[0],
+  );
   const selectRef = useRef(null);
   useOutsideClick(selectRef, () => {
     show === true && setShow(false);

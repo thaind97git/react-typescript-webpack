@@ -7,10 +7,6 @@ export default [
     name: 'home',
     path: '/',
     exact: true,
-    layout: {
-      header: true,
-      footer: true,
-    },
     component: Home,
   },
 ];

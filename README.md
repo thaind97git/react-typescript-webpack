@@ -176,6 +176,39 @@ For Production:
       t('user.name') will be render "Name" for `en` and "Tên" for `vi`
     ```
 
+- Call API with axios
+
+  ```javascript
+  import { getUser } from '@/apis/user.ts';
+  import { setLoading } from '@/store/slices/appSlice';
+  import { errorHandler } from '@/helpers/axios';
+
+  const dispatch = useDispatch();
+
+  // Use useCallback to memorize create func (just one time)
+  const fetchUser = useCallback(async () => {
+    try {
+      // Star loading spinner
+      dispatch(setLoading(true));
+
+      // fetch user
+      const resp = await getUser();
+      console.log(resp);
+    } catch (error) {
+      // display toast when error
+      errorHandler(error);
+    } finally {
+      // End loading spinner
+      dispatch(setLoading(false));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Trigger function
+    fetchUser();
+  }, [fetchUser]);
+  ```
+
 ---
 
 ## Tips

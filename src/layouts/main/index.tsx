@@ -45,7 +45,7 @@ const Main: React.FC = () => {
                 render={props => {
                   updateDisplayLayout(currentLayout, layout);
                   /**
-                   * Use this for authentication like admin page
+                   * Use this code for authorization like admin page
                    */
                   // return (
                   //   <Auth>

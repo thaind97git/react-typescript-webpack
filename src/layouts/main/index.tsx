@@ -44,6 +44,14 @@ const Main: React.FC = () => {
                 path={path}
                 render={props => {
                   updateDisplayLayout(currentLayout, layout);
+                  /**
+                   * Use this for authentication like admin page
+                   */
+                  // return (
+                  //   <Auth>
+                  //     <Component {...props} />
+                  //   </Auth>
+                  // );
                   return <Component {...props} />;
                 }}
                 {...rest}

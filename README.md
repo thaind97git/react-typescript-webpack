@@ -209,6 +209,11 @@ For Production:
   }, [fetchUser]);
   ```
 
+- How to use Auth feature
+  - If you want to build an admin page, with authorize full layout, just go to line **50** at `src/layouts/main.tsx` and use the code inside comment.
+  - **Auth** component is a feature help authorize page by fetching profile each time page rendered.
+  - You must have a server API to use this feature. This API with simple function like receive a header token, return user profile if token is valid and return 404 if token is expired.
+
 ---
 
 ## Tips

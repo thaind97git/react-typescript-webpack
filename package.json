@@ -6,7 +6,7 @@
   "description": "The React-Typescript Boilerplate with Webpack config manual",
   "main": "index.js",
   "scripts": {
-    "postinstall": "node .huskyinstall",
+    "postinstall": "rm -rf .husky && husky install && npx husky add .husky/pre-commit \"npx lint-staged\"",
     "test": "jest --config src/jest.config.js --updateSnapshot",
     "dev": "webpack serve --config webpack/webpack.dev.js --hot",
     "build": "webpack --config webpack/webpack.prod.js",

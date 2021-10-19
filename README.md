@@ -218,7 +218,6 @@ For Production:
 
 ## Tips
 
-- Go to `.huskyinstall`, remove comment at <b>line 37</b> and run `[yarn or npm install]` again to apply run test when using `git push origin [ branch ]`
 - Go to `config/@types/[any-file-name].d.ts` to declare global type of typescript
 - Go to `pm2/prod.json` and change <b>"name: ~~react-webpack-typescript-starter~~ ->[other-name]"</b> to config pm2 app name
 - Go to `components/spinner/index.tsx` and modify jsx + css to use another loading

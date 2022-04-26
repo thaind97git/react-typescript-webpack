@@ -13,6 +13,7 @@ const ImageminWebpack = require('image-minimizer-webpack-plugin');
 const paths = require('../config/paths');
 const { appBuild, appPublic, appHtml } = paths;
 
+const imageTypeIgnoreCopy = ['.png', '.jpg', '.jpeg', '.gif', '.svg'];
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 
 module.exports = merge(common, {
@@ -29,6 +30,12 @@ module.exports = merge(common, {
         {
           from: path.resolve(appPublic, 'static'),
           to: path.resolve(appBuild, 'static'),
+          globOptions: {
+            ignore: [
+              ...imageTypeIgnoreCopy.map(ext => `**/images/*/*${ext}`),
+              '**/fonts/**',
+            ],
+          },
           toType: 'dir',
         },
       ],
@@ -67,6 +74,7 @@ module.exports = merge(common, {
     filename: 'static/js/[name].[chunkhash].js',
     // There are also additional JS chunk files if you use code splitting.
     chunkFilename: 'static/js/[name].[chunkhash].chunk.js',
+    clean: true,
   },
   optimization: {
     nodeEnv: 'production',

@@ -17,6 +17,7 @@ const config = {
     '^.+\\.(css|less|scss)$': '<rootDir>/config/jest/cssMock.js',
     '^@/static/(.*)$': '<rootDir>/public/static/$1',
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^.+\\/features/\\*\\*/route.ts$': '<rootDir>/config/jest/routeMock.js',
   },
 };
 

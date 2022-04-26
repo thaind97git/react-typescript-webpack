@@ -5,7 +5,7 @@
 <a href="https://github.com/thaind97git/react-typescript-webpack/stargazers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/thaind97git/react-typescript-webpack" data-origin="https://img.shields.io/github/stars/thaind97git/react-typescript-webpack" alt="Git star"></a> 
 <a href="https://github.com/thaind97git/react-typescript-webpack/blob/main/LICENSE" target="_blank" rel="noopener"><img src="https://img.shields.io/github/license/thaind97git/react-typescript-webpack" data-origin="https://img.shields.io/github/license/thaind97git/react-typescript-webpack" alt="Git MIT"></a> 
 </p>
-   <img src="../public/static/images/banner.png"  alt="react typescript webpack starter"   />
+   <img src="https://raw.githubusercontent.com/thaind97git/react-typescript-webpack/main/public/static/images/banner.png"  alt="react typescript webpack starter"   />
 </div>
 <br  />
 

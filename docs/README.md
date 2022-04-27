@@ -51,7 +51,7 @@
    [ yarn or npm run ] build
    ```
 
-2. Setup env for production mode by create new file `.env.production`
+2. Setup env for production mode by create new file `.env`
 
 3. Run project at build directory
    - Using pm2: `[ yarn or npm run ] start-pm2`
@@ -121,7 +121,9 @@
 
   _- You don't need do anything else after create and modify `route.ts` because i'm using [import-glob](https://www.npmjs.com/package/import-glob) to auto import (check at `webpack/webpack.common.js` for plugin, `src/router/index.ts` and `src/layouts/main/index.tsx` for using)._
 
-  _- If you don't want to use auto import or <b>using project with jest</b>, just using the code that i'm commented. Because i'm not yet support auto import for jest._
+  _- ~~If you don't want to use auto import or <b>using project with jest</b>, just using the code that i'm commented. Because i'm not yet support auto import for jest.~~_
+
+  _- Now, I'm supported auto import route for jest (check at `config/jest/routeMock.js)`_
 
 ## Write new component
 

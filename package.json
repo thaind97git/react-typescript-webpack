@@ -2,7 +2,7 @@
   "author": "aldenn",
   "license": "ISC",
   "name": "react-webpack-typescript-starter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The React-Typescript Boilerplate with Webpack config manual",
   "main": "index.js",
   "scripts": {

@@ -26,7 +26,7 @@ React-Typescript-Webpack was config with React, Typescript and Webpack without C
 
 # Documentation
 
-[https://thaind97git.github.io/react-typescript-webpack/](https://thaind97git.github.io/react-typescript-webpack/)
+Full documentation [here](https://thaind97git.github.io/react-typescript-webpack/)
 
 ## License
 

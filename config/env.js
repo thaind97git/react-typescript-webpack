@@ -30,7 +30,7 @@ const dotenvFiles = [
   // since normally you expect tests to produce the same
   // results for everyone
   // NODE_ENV !== 'test' && `${paths.dotenv}.local`,
-  `${paths.dotenv}.${NODE_ENV}`,
+  `${paths.dotenv}`,
   // paths.dotenv,
 ].filter(Boolean);
 

@@ -1,10 +1,11 @@
+import env from '@/constants/env';
 import { getHeaders } from '@/utils';
 
 import axios from 'axios';
 // Make an 'instance' of axios
 const instance = axios.create({
   // .. where we make our configurations
-  baseURL: process.env.API_SERVER_URL,
+  baseURL: env.ApiServerUrl,
 });
 
 // Where you would set stuff like your 'Authorization' header, etc ...
